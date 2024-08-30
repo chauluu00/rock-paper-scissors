@@ -23,7 +23,6 @@ const humanChoice = getHumanChoice();
 function playGame (){
     let humanScore = 0;
     let computerScore = 0;
-    let totalScore = humanScore + computerScore;
 
     function playRound (humanChoice, computerChoice){
         if (computerChoice === humanChoice){
