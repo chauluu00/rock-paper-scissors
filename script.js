@@ -22,28 +22,25 @@ function getHumanChoice (){
     }
 }
 const humanChoice = getHumanChoice();
-console.log(getHumanChoice());
+console.log(humanChoice);
 
-// let humanScore = 0;
-// let computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
-// function playRound (humanChoice, computerChoice){
-//     computerChoice = c1.toLowerCase;
-//     humanChoice = c2.toLowerCase;
-//     if (computerChoice === humanChoice){
-//         console.log("It's a tie!");
-//     } else if (computerChoice === "rock" && humanChoice === "scissors" || computerChoice === "scissors" && humanChoice === "paper" || computerChoice === "paper" && humanChoice === "rock"){
-//         console.log("You lose! " + computerChoice + " beats " + computerChoice + ".");
-//         computerScore++;
-//     } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock"){
-//         console.log("You win!");
-//         humanScore++;
-//     } else {
-//         console.log("Please try again.");
-//     }
-// }
+function playRound (humanChoice, computerChoice){
+    if (computerChoice === humanChoice){
+        console.log("It's a tie!");
+    } else if (computerChoice === "rock" && humanChoice === "scissors" || computerChoice === "scissors" && humanChoice === "paper" || computerChoice === "paper" && humanChoice === "rock"){
+        console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
+        computerScore++;
+    } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock"){
+        console.log("You win!");
+        humanScore++;
+    } else {
+        console.log("Please try again.");
+    }
+}
 
-// const humanSelection = getHumanChoice;
-// const computerSelection = getComputerChoice;
-
-// playRound(humanSelection, computerSelection);
+playRound(humanChoice, computerChoice);
+console.log(computerScore);
+console.log(humanScore);
