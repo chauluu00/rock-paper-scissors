@@ -8,19 +8,22 @@ function getComputerChoice (){
         return "scissors";
     }
 }
+
 const computerChoice = getComputerChoice();
 console.log(computerChoice);
 
-// let c2 = prompt("What is your choice?");
-// function getHumanChoice (c2){
-//     if(c2.toLowerCase() === "rock" || c2.toLowerCase() === "paper" || c2.toLowerCase() === "scissors"){
-//         return c2.toLowerCase();
-//     } else {
-//         prompt("Your choice is invalid, please choose again.");
-//     }
-// }
+//const prompt=require("prompt-sync")({sigint:true});
+function getHumanChoice (){
+    const humanChoice = prompt("What is your choice?");
+    if(humanChoice !== null && humanChoice !== ""){
+        return humanChoice.toLowerCase();
+    } else {
+        return "";
+    }
+}
+const humanChoice = getHumanChoice();
+console.log(getHumanChoice());
 
-// console.log(getHumanChoice(c2));
 // let humanScore = 0;
 // let computerScore = 0;
 
