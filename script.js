@@ -8,10 +8,8 @@ function getComputerChoice (){
         return "scissors";
     }
 }
-
 const computerChoice = getComputerChoice();
 
-//const prompt=require("prompt-sync")({sigint:true});
 function getHumanChoice (){
     const humanChoice = prompt("What is your choice?");
     if(humanChoice !== null && humanChoice !== ""){
@@ -25,6 +23,7 @@ const humanChoice = getHumanChoice();
 function playGame (){
     let humanScore = 0;
     let computerScore = 0;
+    let totalScore = humanScore + computerScore;
 
     function playRound (humanChoice, computerChoice){
         if (computerChoice === humanChoice){
@@ -36,19 +35,23 @@ function playGame (){
             console.log("You threw " + humanChoice + " and the computer threw " + computerChoice + ". You win!");
             humanScore++;
         } else {
-            console.log("Please try again.");
+            console.log("Your choice is invalid. Please try again.");
         }
     }
     //play 5 rounds
-    while (humanScore < 5 && computerScore < 5){
+    for (i=1; i < 5; i++){
+    console.log("Round" + i);
     playRound(getHumanChoice(), getComputerChoice());
+    console.log("Current score - Human: " +humanScore+ ", Computer: "+computerScore+".");
     }
     
     //Announce winner
     if (humanScore > computerScore){
         console.log("The score is " + humanScore + " - " + computerScore + " You won the game!");
-    } else {
+    } else if (humanScore < computerScore){
         console.log("The score is " + computerScore + " - " + humanScore + " You lost the game!");
+    } else {
+        console.log("The score is " + computerScore + " - " + humanScore + " It's a tie!");
     }
 }
 
