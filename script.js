@@ -8,18 +8,15 @@ function getComputerChoice (){
         return "scissors";
     }
 }
-//let computerChoice = getComputerChoice();
 
 function getHumanChoice (){
     const humanChoice = prompt("What is your choice?");
-    if(humanChoice !== null && humanChoice !== ""){
+    if(humanChoice !== null && humanChoice !==""){
         return humanChoice.toLowerCase();
-        console.log(humanChoice.toLowerCase());
     } else {
         return "";
     }
 }
-//let humanChoice = getHumanChoice();
 
 function playGame (){
     let humanScore = 0;
@@ -36,6 +33,7 @@ function playGame (){
             humanScore++;
         } else {
             console.log("Your choice is invalid. Please try again.");
+            getHumanChoice();
         }
     }
     //play 5 rounds
