@@ -24,12 +24,12 @@ function playGame (){
 
     function playRound (humanChoice, computerChoice){
         if (computerChoice === humanChoice){
-            console.log("You threw " + humanChoice + " and the computer threw " + computerChoice + ". It's a tie!");
+            console.log(`You threw ${humanChoice} and the computer threw ${computerChoice}. It's a tie!`);
         } else if (computerChoice === "rock" && humanChoice === "scissors" || computerChoice === "scissors" && humanChoice === "paper" || computerChoice === "paper" && humanChoice === "rock"){
-            console.log("You threw " + humanChoice + " and the computer threw " + computerChoice + ". You lose!");
+            console.log(`You threw ${humanChoice} and the computer threw ${computerChoice}. You lose!`);
             computerScore++;
         } else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock"){
-            console.log("You threw " + humanChoice + " and the computer threw " + computerChoice + ". You win!");
+            console.log(`You threw ${humanChoice} and the computer threw ${computerChoice}. You win!`);
             humanScore++;
         } else {
             console.log("Your choice is invalid. Please try again.");
@@ -37,7 +37,7 @@ function playGame (){
         }
     }
     //play 5 rounds
-    for (i=1; i < 6; i++){
+    for (let i=1; i < 6; i++){
     console.log("Round " + i);
     playRound(getHumanChoice(), getComputerChoice());
     console.log("Current score - Human: " +humanScore+ ", Computer: "+computerScore+".");
@@ -45,11 +45,11 @@ function playGame (){
     
     //Announce winner
     if (humanScore > computerScore){
-        console.log("The score is " + humanScore + " - " + computerScore + " You won the game!");
+        console.log(`The score is ${humanScore} - ${computerScore}. You won the game!`);
     } else if (humanScore < computerScore){
-        console.log("The score is " + computerScore + " - " + humanScore + " You lost the game!");
+        console.log(`The score is ${humanScore} - ${computerScore}. You lost the game!`);
     } else {
-        console.log("The score is " + computerScore + " - " + humanScore + " It's a tie!");
+        console.log(`The score is ${humanScore} - ${computerScore}. It's a tie!`);
     }
 }
 
